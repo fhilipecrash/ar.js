@@ -7,34 +7,23 @@
     <!-- Import AR.js with marker + location based support -->
     <script src="aframe-ar.js"></script>
   </head>
-  <body style="margin: 0px; overflow: hidden">
-    <a-scene embedded arjs="sourceType: webcam;" shadow="type: pcfsoft">
-    <!-- Adicionar uma luz direcional com sombras -->
-    <a-light
-      type="directional"
-      position="0 4 -4"
-      intensity="0.5"
-      castShadow="true"
-    ></a-light>
-    <a-light type="ambient" intensity="0.5"></a-light>
-    <!-- Configurar o marcador e o modelo -->
-    <a-marker preset="hiro">
-      <a-entity
-        position="0 0 0"
-        scale="0.05 0.05 0.05"
-        gltf-model="url(scene.gltf)"
-        shadow="cast: true; receive: true"
-      ></a-entity>
-    </a-marker>
-    <!-- Adicionar um plano para receber sombras -->
-    <a-plane
-      rotation="-90 0 0"
-      width="10"
-      height="10"
-      color="#7BC8A4"
-      shadow="receive: true"
-    ></a-plane>
-    <a-entity camera></a-entity>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <!-- we use cors proxy to avoid cross-origin problems -->
+        <!--
+          ⚠️⚠️⚠️
+          https://arjs-cors-proxy.herokuapp.com/ is now offline, Heroku has dismissed all his free plans from November 2022.
+          You need to host your own proxy and use it instead. The proxy is based on CORS Anywhere (see https://github.com/Rob--W/cors-anywhere).
+          ⚠️⚠️⚠️
+        -->
+        <a-entity
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          gltf-model="url(scene.gltf)"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
