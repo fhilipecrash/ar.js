@@ -18,7 +18,7 @@
   <body class="flex flex-col items-center h-dvh !w-dvw overflow-hidden !m-0">
     <model-viewer
       id="content-3d"
-      src="logo.glb"
+      src="logo2.glb"
       camera-controls
       ar
       ar-modes="webxr scene-viewer quick-look"
@@ -32,7 +32,7 @@
         <a-entity
           position="0 0 0"
           scale="0.5 0.5 0.5"
-          gltf-model="url(logo.glb)"
+          gltf-model="url(logo2.glb)"
         ></a-entity>
       </a-marker>
       <a-entity camera></a-entity>
@@ -104,7 +104,7 @@
         activeContent = content3D;
         arVideo.style.display = "none";
         content3D.cameraControls = false;
-        content3D.cameraOrbit = "0deg 90deg 150%";
+        content3D.cameraOrbit = "0deg 0deg 150%";
       }
       if (contentType === "3D") {
         activeContent = content3D;
